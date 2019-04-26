@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="com.no_pigeon_date.demo.entity.UsersEntity">
+        <table name="users" schema="dateportable" catalog=""/>
+        <attributes>
+            <id name="uid">
+                <column name="uid"/>
+            </id>
+            <basic name="id">
+                <column name="id"/>
+            </basic>
+            <basic name="nickname">
+                <column name="nickname"/>
+            </basic>
+            <basic name="password">
+                <column name="password"/>
+            </basic>
+            <basic name="sex">
+                <column name="sex"/>
+            </basic>
+            <basic name="level">
+                <column name="level"/>
+            </basic>
+            <basic name="exp">
+                <column name="exp"/>
+            </basic>
+            <basic name="creditscore">
+                <column name="creditscore"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
