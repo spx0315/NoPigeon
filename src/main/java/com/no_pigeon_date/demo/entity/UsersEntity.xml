@@ -8,9 +8,6 @@
             <id name="uid">
                 <column name="uid"/>
             </id>
-            <basic name="id">
-                <column name="id"/>
-            </basic>
             <basic name="nickname">
                 <column name="nickname"/>
             </basic>
