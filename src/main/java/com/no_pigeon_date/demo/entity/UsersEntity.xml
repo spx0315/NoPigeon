@@ -3,13 +3,13 @@
         version="2.0">
 
     <entity class="com.no_pigeon_date.demo.entity.UsersEntity">
-        <table name="users" schema="dateportable" catalog=""/>
+        <table name="users" schema="dateportable" />
         <attributes>
             <id name="uid">
                 <column name="uid"/>
             </id>
-            <basic name="nickname">
-                <column name="nickname"/>
+            <basic name="username">
+                <column name="username"/>
             </basic>
             <basic name="password">
                 <column name="password"/>

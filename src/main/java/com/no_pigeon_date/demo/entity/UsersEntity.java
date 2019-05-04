@@ -7,7 +7,16 @@ import java.util.Objects;
 @Table(name = "users", schema = "dateportable")
 public class UsersEntity {
     private int uid;
-    private String nickname;
+    private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     private String password;
     private String sex;
     private Integer level;
@@ -15,6 +24,7 @@ public class UsersEntity {
     private Integer creditscore;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "uid")
     public int getUid() {
         return uid;
@@ -25,13 +35,13 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "nickname")
+    @Column(name = "username")
     public String getNickname() {
-        return nickname;
+        return username;
     }
 
     public void setNickname(String nickname) {
-        this.nickname = nickname;
+        this.username = username;
     }
 
     @Basic
@@ -90,7 +100,7 @@ public class UsersEntity {
         if (o == null || getClass() != o.getClass()) return false;
         UsersEntity that = (UsersEntity) o;
         return uid == that.uid &&
-                Objects.equals(nickname, that.nickname) &&
+                Objects.equals(username, that.username) &&
                 Objects.equals(password, that.password) &&
                 Objects.equals(sex, that.sex) &&
                 Objects.equals(level, that.level) &&
@@ -100,6 +110,6 @@ public class UsersEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(uid, nickname, password, sex, level, exp, creditscore);
+        return Objects.hash(uid, username, password, sex, level, exp, creditscore);
     }
 }

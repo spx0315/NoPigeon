@@ -1,3 +1,4 @@
+/*
 package com.no_pigeon_date.demo.config;
 
 
@@ -12,7 +13,6 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = "com.no_pigeon_date.demo.dao")
 @ComponentScan(basePackages = "com.no_pigeon_date.demo.entity")
 public class DataBaseConfig {
     @Bean
@@ -33,3 +33,4 @@ public class DataBaseConfig {
         return sqlSessionFactory.getObject();
     }
 }
+*/

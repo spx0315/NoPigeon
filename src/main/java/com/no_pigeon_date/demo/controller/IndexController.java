@@ -8,7 +8,7 @@ public class IndexController {
 
     @RequestMapping(value="/login.go")
     public String userLogin(){
-        //System.out.println("userLogin.do");
+        System.out.println("userLogin.do");
         return "login";
     }
 }

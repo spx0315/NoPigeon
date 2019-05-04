@@ -1,7 +1,7 @@
 package com.no_pigeon_date.demo.controller;
 
-import com.no_pigeon_date.demo.dao.UserDao;
 import com.no_pigeon_date.demo.entity.UsersEntity;
+import com.no_pigeon_date.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 
 @Controller
-@EnableAutoConfiguration
 public class UserController {
-    @Autowired
-    private UserDao userDao;
+    @Resource
+    private UserService userService;
 
     @GetMapping("/index")
     public String index(){
@@ -43,7 +43,7 @@ public class UserController {
         usersEntity.setNickname(username);
         usersEntity.setPassword(password);
         usersEntity.setSex(sex);
-        userDao.setOneUser(usersEntity);
+        userService.save(usersEntity);
         return "index";
     }
 
@@ -56,7 +56,7 @@ public class UserController {
         user.setSex(sex);
         user.setLevel(1);
         user.setExp(0);
-        userDao.setOneUser(user);
+        userService.save(user);
         return "login";
     }
 
