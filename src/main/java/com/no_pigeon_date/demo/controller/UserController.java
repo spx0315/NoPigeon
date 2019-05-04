@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 
 
 @Controller
-@RequestMapping("/user/*")
 @EnableAutoConfiguration
 public class UserController {
     @Autowired
@@ -44,7 +43,7 @@ public class UserController {
         usersEntity.setNickname(username);
         usersEntity.setPassword(password);
         usersEntity.setSex(sex);
-        userDao.save(usersEntity);
+        userDao.setOneUser(usersEntity);
         return "index";
     }
 
@@ -57,7 +56,7 @@ public class UserController {
         user.setSex(sex);
         user.setLevel(1);
         user.setExp(0);
-        userDao.save(user);
+        userDao.setOneUser(user);
         return "login";
     }
 
